@@ -1,0 +1,146 @@
+<template>
+  <div class="maindiv">
+    <b-container class="bv-example-row">
+      <b-row>
+        <b-col sm="6" class="first-box">
+          <p class="vot">
+            <u>This is a page for Potato Voting</u>
+          </p>
+        </b-col>
+        <b-col sm="6" class="final-box">
+          <p class="para">Made by with love by[name]</p>
+        </b-col>
+      </b-row>
+    </b-container>
+
+    <b-container class="bg3">
+      <b-row>
+        <b-col sm="6" offset="3">
+          <b-nav>
+            <b-nav-item>
+              <img
+                src="https://raw.githubusercontent.com/cognitedata/fe-interview-challenge-vue/master/resources/mashedPotato.jpg"
+                height="90"
+                width="150"
+              />
+            </b-nav-item>
+            <b-nav-item>
+              <b-button variant="success" @click="liked+=1" style="width:90px;">Like</b-button>
+            </b-nav-item>
+            <b-nav-item>
+              <span class="text">likes: {{liked}}</span>
+            </b-nav-item>
+          </b-nav>
+        </b-col>
+      </b-row>
+
+      <b-row>
+        <b-col sm="6" offset="3">
+          <b-nav>
+            <b-nav-item>
+              <img
+                src="https://raw.githubusercontent.com/cognitedata/fe-interview-challenge-vue/master/resources/bakedPotato.jpeg"
+                height="90"
+                width="150"
+              />
+            </b-nav-item>
+            <b-nav-item>
+              <b-button @click="disliked+=1" variant="danger" style="width:90px;">Dislike</b-button>
+            </b-nav-item>
+            <b-nav-item>
+              <span class="text">Dislikes:{{disliked}}</span>
+            </b-nav-item>
+          </b-nav>
+        </b-col>
+      </b-row>
+
+      <b-row>
+        <b-col sm="6" offset="4">
+          <b-nav>
+            <b-nav-item>
+              <b-button @click="reset" variant="warning" style="width:150px;">Reset</b-button>
+            </b-nav-item>
+            <b-nav-item>
+              <span class="text">TotalClickes : {{liked + disliked}}</span>
+            </b-nav-item>
+          </b-nav>
+        </b-col>
+      </b-row>
+    </b-container>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      liked: 0,
+      disliked: 0
+    };
+  },
+  methods: {
+    reset() {
+      (this.liked = 0), (this.disliked = 0);
+    }
+  }
+};
+</script>
+<style scoped>
+.first-box {
+  background-color: darkslateblue;
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.second-box {
+  background-image: url("https://raw.githubusercontent.com/cognitedata/fe-interview-challenge-vue/master/resources/thumbs.png");
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.final-box {
+  background-image: url("https://raw.githubusercontent.com/cognitedata/fe-interview-challenge-vue/master/resources/thumbs.png");
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.final {
+  background-color: black;
+  height: 6ovh;
+  /* width: 70%; */
+}
+.pot {
+  width: 150px;
+
+  margin-top: 125px;
+
+  float: left;
+}
+.poto {
+  width: 150px;
+  float: left;
+  margin-top: 120px;
+}
+.text {
+  padding: 10px;
+  margin-top: 50px;
+}
+.para {
+  position: relative;
+  top: 100px;
+  left: 40px;
+  font-size: 50px;
+  color: black;
+}
+.bg3 {
+  background-image: url("https://i.stack.imgur.com/Y8kHa.jpg");
+  height: 45vh;
+}
+.vot {
+  font-size: 50px;
+  color: black;
+  margin-top: 50px;
+}
+</style>
